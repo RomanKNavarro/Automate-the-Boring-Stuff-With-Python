@@ -1,0 +1,28 @@
+#! Collatz Sequence: If given number is even, return number // 2 (no decimal). If number is odd, return 3 * number + 1.
+# Then write program that continues calling collatz() on a number if it is not 1.
+
+
+def collatz(number):
+   if number % 2 == 0:
+      number = number // 2 
+   else:
+      number = 3 * number + 1
+   return number
+   
+
+try:
+   
+   print('Enter Number:')
+   integer = int(input())
+   while True:
+      if integer == 1:
+         break
+      else:
+         integer = collatz(integer)
+         print(integer)
+         continue
+      
+except ValueError:
+   print('NUMBER was not entered.')
+   
+   

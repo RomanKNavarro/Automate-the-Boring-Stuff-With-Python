@@ -1,0 +1,10 @@
+# The comma() function takes a list as an argument and returns
+# it as a string, with each value separated by a comma. 'and'
+# is added before the last value.
+
+def comma(values):
+   print(', '.join(values[:-1]) + ', and ' + values[-1])
+
+
+food = ['burgers', 'carrots', 'apples', 'cheese']
+comma(food)
