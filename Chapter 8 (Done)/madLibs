@@ -1,0 +1,40 @@
+#! madLibs.py - The user is prompted to enter nouns, verbs, adjectives. These are added to a mad libs text file and a new file is created.
+
+
+from shutil import copyfile
+import os
+
+
+os.chdir(r"C:\Coding Shit\myPrograms\Practice Projects\Chapter 8\Mad Libs")
+
+
+file = open('exampleFile.txt')
+fileContent = file.read()
+wordList = fileContent.split()
+allCaps = ['VERB', 'ADJECTIVE', 'NOUN']
+
+
+newCaps = []
+for word in allCaps:
+   newCaps.append(word)
+   newCaps.append(word + '.')
+   newCaps.append(word + ',') 
+
+
+for index, word in enumerate(wordList): 
+   if word in newCaps:
+      print('Enter an ' + word.lower())
+      newWord = input()
+      if word.endswith('.') or word.endswith(','):
+         newWord = newWord + '.'
+      wordList[index] = newWord
+   else:
+      continue
+
+
+newString = ' '.join(wordList)
+newFile = open('outputFile3.txt', 'w')
+newFile.write(newString)
+
+newFile.close()
+file.close()

@@ -1,0 +1,18 @@
+import os, re, sys
+
+if len(sys.argv) < 2:
+   print(''''findLine.py - Goes through directory, and any .txt
+   files found are iterated through in search of regex mathces''')
+else:
+   givenRegex = re.compile(r'%s' % (sys.argv[2]))
+   for filename in os.listdir(sys.argv[1]):
+      if filename.endswith('.txt') == True:
+         print('found in %s: \n' % (filename))
+         txtFile = open(sys.argv[1] + '\\' + filename)
+         fileContent = txtFile.read()
+         matches = givenRegex.findall(fileContent.replace("\n"," "))
+         print('\n'.join(matches))
+            
+            
+      else:
+         continue 
