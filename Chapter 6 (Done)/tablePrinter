@@ -1,0 +1,35 @@
+# tablePrinter.py - Given a list of lists, the printTable() function prints its values in a well-organized list
+
+
+tableData = [['apples', 'oranges', 'cherries', 'banana'],
+             ['Alice', 'Bob', 'Carol', 'David'],
+             ['dogs', 'cats', 'moose', 'goose']]
+
+
+def printTable(table):
+   colWidths = [0] * len(tableData)
+   current = 0
+   for llist in table:
+      colWidths[current] = len(max(llist, key=len))
+      current += 1
+ 
+ 
+   for i in range(4):
+      string = table[0][i], table[1][i], table[2][i]
+      string = ', '.join(string)
+      string = string.rjust(max(colWidths))
+      print(string)
+       
+      
+       
+printTable(tableData)
+
+
+
+
+# need to rjust 
+
+
+
+
+ 
