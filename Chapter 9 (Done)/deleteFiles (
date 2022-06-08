@@ -1,0 +1,8 @@
+import os, send2trash
+for folder, subfolders, files in os.walk(r"C:\Coding Shit\myPrograms\Practice Projects\Chapter 9\Ooga booga"):
+   for file in files:
+      os.chdir(folder)
+      if os.path.getsize(file) > 1000:
+         send2trash.send2trash(file)
+         print('trashed: ' + os.path.abspath(file))
+          

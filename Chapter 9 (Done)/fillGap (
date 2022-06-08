@@ -1,0 +1,15 @@
+import os
+files = os.listdir(r"C:\Coding Shit\myPrograms\Practice Projects\Chapter 9\Ooga booga")
+for filename in files:
+   try:
+      fileNumber = filename[-5]
+      fileNumber = int(fileNumber)
+      print(type(fileNumber))
+   except ValueError:
+      files.remove(filename)
+
+'''for num in range(0, len(files)):
+   for file in files:
+      if file.index != num + 1:
+         filename[-5] = str(num)
+print(files)'''

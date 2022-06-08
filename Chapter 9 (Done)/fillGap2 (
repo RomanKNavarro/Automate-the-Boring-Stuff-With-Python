@@ -1,0 +1,16 @@
+import os, shutil
+directory = r"C:\Coding Shit\myPrograms\Practice Projects\Chapter 9\Ooga booga (test files)" 
+os.chdir(directory)
+prefix = 'testFile'
+ext = '.txt'
+
+os.listdir(directory) 
+ 
+for filename in os.listdir(directory):
+   if prefix in filename:
+      if ext in filename: 
+         newFilename = r'%s%s%s' % (prefix, os.listdir(directory).index(filename) + 1, ext) 
+         shutil.move(filename, newFilename) 
+ 
+ 
+ 
