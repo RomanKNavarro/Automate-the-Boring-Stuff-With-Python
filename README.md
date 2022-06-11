@@ -10,3 +10,4 @@ FOLDERS NEEDING NAME FIXING ASAP: chapter 9, 12
 
 -FINISH chapter 16
 -FINISH chapter 17
+-maybe get bs4 working again
